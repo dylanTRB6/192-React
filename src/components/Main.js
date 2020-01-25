@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
   } from "react-router-dom";
 import Landing from './Landing'
 import Navbar from './Navbar';
@@ -13,9 +12,32 @@ class Main extends Component{
     constructor (props){
         super(props);
         this.state={
-            eateries:[{id: 1, name: "Canteen", address:"Math Building", contact: "09134444444"},
-            {id: 2, name: "Canteen", address:"Stat Building", contact: "09134444444"}]
+            eateries:[]
         };
+        this.handleEaterySubmit = this.handleEaterySubmit.bind(this)
+        this.addNewEatery = this.addNewEatery.bind(this)
+    }
+    handleEaterySubmit(name, address, contact){
+        console.log("name: "+name + " address:" + address + " contact: " + contact)
+        let body = {name:name, address:address, contact:contact};
+        fetch('http://localhost:5000/eatery/add',{
+            method: 'POST',
+            body: JSON.stringify(body)
+
+        }).then((response)=>{return response.json()})
+        .then((eatery)=>{
+            this.addNewEatery(eatery)
+        })
+    }
+    addNewEatery(eatery){
+        this.setState({
+            eateries: this.state.eateries.concat(eatery)
+        })
+    }
+    componentDidMount(){
+        fetch('http://localhost:5000/eatery')
+      .then((response) => {return response.json()})
+      .then((data) => {this.setState({ eateries: data }) });
     }
     render(){
         return (
@@ -24,11 +46,11 @@ class Main extends Component{
                     <Navbar/>
                     <Switch>
                         <Route exact path="/" component={Landing}/>
-                        <Route path="/all-eateries">
+                        <Route path="/eatery">
                             <AllEateries eateries={this.state.eateries}/>
                         </Route>
                         <Route path="/add-eatery">
-                            <AddEatery/>
+                            <AddEatery handleEaterySubmit={this.handleEaterySubmit}/>
                         </Route>
                     </Switch>
                     

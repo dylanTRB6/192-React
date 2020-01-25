@@ -92,7 +92,7 @@ export default function Navbar() {
         onClose={handleMobileMenuClose}
       >
         <MenuItem>
-            <Typography component={Link} to='/all-eateries' style={{textDecoration:'none'}} color="inherit">
+            <Typography component={Link} to='/eatery' style={{textDecoration:'none'}} color="inherit">
               Show Eateries
             </Typography>
         </MenuItem>  
@@ -125,8 +125,8 @@ export default function Navbar() {
                     </div>
                     <div className={classes.sectionDesktop}>
                       <MenuItem>
-                          <Typography component={Link} to='/all-eateries' style={{textDecoration:'none'}} color="inherit">
-                            Show Eateries
+                          <Typography component={Link} to='/eatery' style={{textDecoration:'none'}} color="inherit">
+                              Show Eateries
                           </Typography>
                       </MenuItem>  
                       <MenuItem>

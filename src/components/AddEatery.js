@@ -22,18 +22,19 @@ const AddEatery = (props) =>{
     const classes=useStyles();
     let formFields = {}
     return (
-        <form className ={classes.root} noValidate autoComplete="off" onSubmit={(e)=> {props.handleEaterySubmit(formFields.name.value,
+        <form className ={classes.root} noValidate autoComplete="off" 
+        onSubmit={(e)=> {props.handleEaterySubmit(formFields.name.value,
             formFields.address.value, 
             formFields.contact.value);
             e.target.reset();}}>
             <div className="field">
-                <TextField id="outlined-basic" ref={input => formFields.name = input} label="Name" variant="outlined" />
+                <TextField id="outlined-basic" inputRef={input => formFields.name = input} label="Name" variant="outlined" />
                 
                 {/* <input ref={input => formFields.name = input} type="text" id="name" placeholder="Name" /> */}
             </div>
             <div className="field">
                 <InputLabel>Address</InputLabel>
-                <Select native className="form-control"id="select1" ref={input => formFields.address = input}>
+                <Select native className="form-control"id="select1" inputRef={input => formFields.address = input}>
                     <optgroup label="College of Engineering">
                         <option>Melchor Hall</option>
                         <option>Institute of Chemical Engineering</option>
@@ -47,7 +48,7 @@ const AddEatery = (props) =>{
             </div>
             <div className="field">
                 <TextField
-                    ref={input => formFields.contact = input}
+                    inputRef={input => formFields.contact = input}
                     id="outlined-number"
                     label="Contact No."
                     type="number"
