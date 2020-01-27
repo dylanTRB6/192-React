@@ -10,7 +10,21 @@ of the Philippines, Diliman for the AY 2019-
 
 ---HISTORY---
 1/25/20: Annysia Dupaya - Created component
-1/26/20: Annysia Dupaya - Integrated with API*/
+1/26/20: Annysia Dupaya - Integrated with API
+
+---OTHER INFO---
+File creation date: 1/25/20
+Development Group: Group 1 - RUPE
+Client Group: Ma. Rowena C. Solamo
+This component is for adding a review to a particular eatery.
+This software's overall purpose is to provide a clean frontend for our system, RUPE.
+
+---VARIABLES---
+useStyles; used to apply styles
+addReview; provides functionality to add a review to an eatery
+formFields; contains the fields of the form
+
+*/
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
