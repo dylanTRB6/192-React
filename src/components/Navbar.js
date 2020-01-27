@@ -1,3 +1,17 @@
+/* ---LICENSE---
+Author: Annysia Dupaya
+This is a course requirement for CS 192
+Software Engineering II under the
+supervision of Asst. Prof. Ma. Rowena C.
+Solamo of the Department of Computer
+Science, College of Engineering, University
+of the Philippines, Diliman for the AY 2019-
+2020 
+
+---HISTORY---
+1/20/20: Annysia Dupaya - Created component
+1/21/20: Annysia Dupaya - Added styling
+1/25/20: Annysia Dupaya - Fixed routes*/
 import React from 'react';
 import {
   Link
@@ -72,7 +86,7 @@ export default function Navbar() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-    const isMenuOpen = Boolean(anchorEl);
+    /*const isMenuOpen = Boolean(anchorEl); */
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   
     const mobileMenuId = 'primary-search-account-menu-mobile';

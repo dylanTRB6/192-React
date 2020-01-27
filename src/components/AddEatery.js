@@ -1,3 +1,17 @@
+/* ---LICENSE---
+Author: Annysia Dupaya
+This is a course requirement for CS 192
+Software Engineering II under the
+supervision of Asst. Prof. Ma. Rowena C.
+Solamo of the Department of Computer
+Science, College of Engineering, University
+of the Philippines, Diliman for the AY 2019-
+2020 
+
+---HISTORY---
+1/20/20: Annysia Dupaya - Created component
+1/25/20: Annysia Dupaya - Integrated with API
+*/
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -91,7 +105,6 @@ const AddEatery = (props) =>{
                     }}
                     variant="outlined"
                 />
-                {/* <input ref={input => formFields.contact = input}type="text" id="contact" placeholder="Contact"/> */}
             </div>
             <button className="ui primary button"type="submit">Submit</button>
 
