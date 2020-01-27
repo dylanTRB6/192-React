@@ -1,0 +1,31 @@
+.eateriesContainer{
+    display: flex;
+    flex-wrap:wrap;
+}
+.eateryBox{
+    width:30%;
+    margin:1em;
+    display:flex;
+    flex-wrap:wrap;
+    padding-top:0.5em;
+}
+.subBox{
+    width:50%;
+    overflow:hidden;
+}
+@media only screen and (max-width: 735px){
+    .eateryBox{
+        width:80%
+    }
+    .subBox{
+        width:100%
+    }
+}
+@media only screen and (max-width:1031px){
+    .eateryBox{
+        width:45%
+    }
+    .subBox{
+        width:100%
+    }
+}

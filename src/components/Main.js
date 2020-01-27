@@ -8,6 +8,7 @@ import Landing from './Landing'
 import Navbar from './Navbar';
 import AddEatery from './AddEatery';
 import AllEateries from './AllEateries';
+import Footer from './Footer';
 class Main extends Component{
     constructor (props){
         super(props);
@@ -53,7 +54,7 @@ class Main extends Component{
                             <AddEatery handleEaterySubmit={this.handleEaterySubmit}/>
                         </Route>
                     </Switch>
-                    
+                    <Footer/>
                 </Router>
             </div>
         )

@@ -4,6 +4,9 @@ import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import PlaceIcon from '@material-ui/icons/Place';
 import AllReviews from './AllReviews';
 import AddReview from './AddReview';
+import Box from '@material-ui/core/Box';
+import '../stylesheets/Eatery.css';
+import StarIcon from '@material-ui/icons/Star';
 
 export default class Eatery extends Component {
     constructor(props){
@@ -44,16 +47,27 @@ export default class Eatery extends Component {
         let eatery = this.state.eatery;
         return(
             <div>
-                <Typography
-                    variant="h4" 
-                    color="inherit">
-                    {eatery.name}
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
-                    <PhoneAndroidIcon/>{eatery.contact}
-                </Typography>
-                <p><PlaceIcon/>{eatery.address}</p>
-                <AddReview handleReviewSubmit={this.handleReviewSubmit}/>
+                <div className='container'>
+                    <Box className='subBox'>
+                        <Typography
+                            variant="h2" 
+                            color="inherit">
+                            {eatery.name} <StarIcon fontSize='large'/> {eatery.rating}
+                        </Typography>
+                        <Typography variant="subtitle1" color="textSecondary">
+                            <PhoneAndroidIcon/>{eatery.contact}
+                        </Typography>
+                        <p><PlaceIcon/>{eatery.address}</p>
+                    </Box>
+                    <Box className='subBox right'>
+                        <Typography
+                            variant="h4" 
+                            color="inherit">
+                        Add a Review
+                        </Typography>
+                        <AddReview handleReviewSubmit={this.handleReviewSubmit}/>
+                    </Box>
+                </div>
                 <AllReviews reviews={this.state.reviews}/>
             </div>
         )
